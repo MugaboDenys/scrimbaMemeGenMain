@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 
 export default function Meme() {
 
-    // const [memeImage, setMemeImage] = React.useState("")
     const [meme, setMeme] = useState({
         topText : "",
         bottomText : "",
@@ -18,7 +17,7 @@ export default function Meme() {
 
     function getMemeImage() {
         const randomNumber = Math.floor(Math.random() * allMemes.length)
-        const url = allMemes[randomNumber].url
+        const {url} = allMemes[randomNumber]
         setMeme(meme=>({...meme, randomImg : url}))
     }
 
